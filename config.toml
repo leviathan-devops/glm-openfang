@@ -1,0 +1,10 @@
+[default_model]
+provider = "deepseek"
+model = "deepseek-chat"
+api_key_env = "DEEPSEEK_API_KEY"
+
+[memory]
+decay_rate = 0.05
+
+[network]
+listen_addr = "0.0.0.0:4200"
