@@ -1,0 +1,8 @@
+[phases.setup]
+nixPkgs = ["...", "openssl", "pkg-config"]
+
+[phases.build]
+cmd = "cargo build --release --bin openfang"
+
+[start]
+cmd = "OPENFANG_HOME=/data ./target/release/openfang start --config config.toml"

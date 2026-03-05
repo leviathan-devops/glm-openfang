@@ -1,8 +1,9 @@
 [build]
-builder = "dockerfile"
+builder = "nixpacks"
 
 [deploy]
 restartPolicyType = "ON_FAILURE"
 restartPolicyMaxRetries = 10
+startCommand = "openfang start --config config.toml"
 healthcheckPath = "/"
-healthcheckTimeout = 60
+healthcheckTimeout = 300
