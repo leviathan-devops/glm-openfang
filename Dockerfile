@@ -1,8 +1,8 @@
 FROM debian:bookworm-slim
 
-RUN apt-get update && apt-get install -y ca-certificates curl && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates curl && rm -rf /var/lib/apt/lists/*
 
-RUN curl -fsSL https://github.com/RightNow-AI/openfang/releases/download/v0.3.23/openfang-x86_64-unknown-linux-gnu.tar.gz | tar xz -C /usr/local/bin && chmod +x /usr/local/bin/openfang
+RUN curl -fsSL https://github.com/RightNow-AI/openfang/releases/download/v0.3.24/openfang-x86_64-unknown-linux-gnu.tar.gz | tar xz -C /usr/local/bin && chmod +x /usr/local/bin/openfang
 
 RUN mkdir -p /root/.openfang
 
