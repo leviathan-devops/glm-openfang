@@ -1,0 +1,24 @@
+name = "shark-commander"
+version = "1.0.0"
+description = "Shark Commander - DeepSeek R1 brain"
+module = "builtin:chat"
+
+[model]
+primary = "deepseek-reasoner"
+provider = "deepseek"
+api_key_env = "DEEPSEEK_API_KEY"
+max_tokens = 8192
+temperature = 0.1
+
+[memory]
+enabled = true
+semantic_search = true
+vector_dim = 384
+knowledge_graph = true
+
+[tools]
+allow = ["agent_spawn", "agent_send", "memory_store", "memory_recall", "file_read", "file_write", "shell_exec", "http_request"]
+
+[discord]
+enabled = true
+token_env = "DISCORD_TOKEN"
