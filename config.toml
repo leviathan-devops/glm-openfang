@@ -1,7 +1,4 @@
-# OpenFang Agent OS Configuration
-# Updated with all provider API keys
-
-# API server settings for Railway deployment
+# OpenFang Configuration
 api_listen = "0.0.0.0:4200"
 api_key = "leviathan-hydra-v3"
 
@@ -9,23 +6,6 @@ api_key = "leviathan-hydra-v3"
 provider = "deepseek"
 model = "deepseek-chat"
 api_key_env = "DEEPSEEK_API_KEY"
-max_tokens = 8192
-temperature = 0.3
-
-[providers.deepseek]
-base_url = "https://api.deepseek.com/v1"
-api_key_env = "DEEPSEEK_API_KEY"
-
-[providers.zhipu]
-base_url = "https://open.bigmodel.cn/api/paas/v4"
-api_key_env = "ZHIPU_API_KEY"
-
-[providers.gemini]
-api_key_env = "GEMINI_API_KEY"
-
-[providers.openrouter]
-base_url = "https://openrouter.ai/api/v1"
-api_key_env = "OPENROUTER_API_KEY"
 
 [memory]
 decay_rate = 0.05
@@ -36,10 +16,7 @@ listen_addr = "0.0.0.0:4200"
 [compaction]
 threshold = 80
 keep_recent = 20
-max_summary_tokens = 1024
 
 [channels.discord]
 bot_token_env = "DISCORD_BOT_TOKEN"
-allowed_guilds = [1475947548811202613, 1477804209842815382]
-default_agent = "assistant"
-intents = 33280
+allowed_guilds = [1475947548811202613]
