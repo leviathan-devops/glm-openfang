@@ -12,8 +12,6 @@ api_key_env = "DEEPSEEK_API_KEY"
 max_tokens = 8192
 temperature = 0.3
 
-# ─── LLM Provider Configurations ─────────────────────────────────────
-
 [providers.deepseek]
 base_url = "https://api.deepseek.com/v1"
 api_key_env = "DEEPSEEK_API_KEY"
@@ -29,42 +27,19 @@ api_key_env = "GEMINI_API_KEY"
 base_url = "https://openrouter.ai/api/v1"
 api_key_env = "OPENROUTER_API_KEY"
 
-# ─── Memory & Context ────────────────────────────────────────────────
-
 [memory]
 decay_rate = 0.05
 
 [network]
 listen_addr = "0.0.0.0:4200"
 
-usage_footer = "Full"
-
 [compaction]
 threshold = 80
 keep_recent = 20
 max_summary_tokens = 1024
-token_threshold_ratio = 0.7
-context_window_tokens = 200000
-
-[vault]
-master_key_env = "OPENFANG_VAULT_KEY"
-
-# ─── Discord Bot Configuration ────────────────────────────────────────
 
 [channels.discord]
 bot_token_env = "DISCORD_BOT_TOKEN"
 allowed_guilds = [1475947548811202613, 1477804209842815382]
-default_agent = "shark-commander"
+default_agent = "assistant"
 intents = 33280
-
-[channels.discord.overrides]
-dm_policy = "ignore"
-group_policy = "all"
-
-# ─── Agent Configurations ─────────────────────────────────────────────
-
-# Shark Commander Brain — DeepSeek R1 overseer agent
-[agent.shark-commander]
-manifest = "agents/shark-commander/agent.toml"
-system_prompt = "prompts/shark-commander.md"
-autostart = true
