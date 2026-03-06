@@ -8,6 +8,8 @@ RUN mkdir -p /root/.openfang
 
 COPY config.toml /root/.openfang/config.toml
 
+# Railway sets PORT dynamically - OpenFang reads OPENFANG_LISTEN
+# Railway will override this with its PORT env var
 ENV OPENFANG_LISTEN=0.0.0.0:4200
 
 EXPOSE 4200
